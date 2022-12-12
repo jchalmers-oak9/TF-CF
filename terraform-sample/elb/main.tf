@@ -3,6 +3,7 @@ provider "aws" {
 }
 
 resource "aws_elb" "bar" {
+  # oak9: aws_elb.listener.instance_protocol is not configured
   name               = "foobar-terraform-elb"
   availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
 
