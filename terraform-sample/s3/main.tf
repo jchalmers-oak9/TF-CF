@@ -1,4 +1,5 @@
 resource "aws_s3_bucket" "s3" {
+  # oak9: S3 bucket is using a canned access control Policy instead of a Public Access Block Configuration
   bucket = "my-tf-remediation-bucket"
   acl    = "private"
 
