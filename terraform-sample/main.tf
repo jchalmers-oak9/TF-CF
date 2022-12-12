@@ -115,6 +115,7 @@ resource "azurerm_lb_nat_rule" "nat_rule_32" {
 }
 
 resource "azurerm_storage_account" "example" {
+  # oak9: azurerm_storage_account.identity.type is not configured
   name                     = "examplestoracc"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
@@ -203,6 +204,7 @@ resource "azurerm_lb_outbound_rule" "examob_rule_0ple" {
   loadbalancer_id         = azurerm_lb.sac_example.id
   name                    = "OutboundRule"
   protocol                = "All"
+  # oak9: azurerm_lb_probe.protocol does not ensure encryption of data-in-transit
   backend_address_pool_id = azurerm_lb_backend_address_pool.backend_address_pool_0.id
 
   frontend_ip_configuration {
