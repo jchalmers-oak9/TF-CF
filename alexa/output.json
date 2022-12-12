@@ -1,0 +1,285 @@
+{
+  "backend": null,
+  "data_resources": [],
+  "managed_resources": [
+    {
+      "type": "aws_lambda_permission",
+      "labels": [
+        "default"
+      ],
+      "mode": "",
+      "pos": {
+        "filename": "./main.tf",
+        "line": 11
+      },
+      "action": "lambda:InvokeFunction",
+      "assume_role_policy": null,
+      "depends_on": null,
+      "description": "",
+      "disk_size": null,
+      "cluster_name": "",
+      "count": "",
+      "enabled_cluster_log_types": null,
+      "enable_key_rotation": null,
+      "encryption_config": null,
+      "filename": "",
+      "function_name": "aws_lambda_function.default.function_name",
+      "handler": "",
+      "instance_types": null,
+      "metadata": null,
+      "name": "",
+      "node_group_name": "",
+      "node_role_arn": null,
+      "policy": null,
+      "policy_arn": null,
+      "principal": "alexa-appkit.amazon.com",
+      "provider": {
+        "type": "",
+        "labels": null,
+        "mode": "",
+        "pos": {
+          "filename": "",
+          "line": 0
+        },
+        "name": ""
+      },
+      "remote_access": null,
+      "role": null,
+      "role_arn": null,
+      "role_ref": null,
+      "rule": null,
+      "runtime": "",
+      "scaling_config": null,
+      "source_code_hash": null,
+      "statement_id": "AllowExecutionFromAlexa",
+      "subject": null,
+      "subnet_ids": null,
+      "tags": null,
+      "target_key_id": null,
+      "version": null,
+      "vpc_config": null
+    },
+    {
+      "type": "aws_lambda_function",
+      "labels": [
+        "default"
+      ],
+      "mode": "",
+      "pos": {
+        "filename": "./main.tf",
+        "line": 18
+      },
+      "action": "",
+      "assume_role_policy": null,
+      "depends_on": null,
+      "description": "",
+      "disk_size": null,
+      "cluster_name": "",
+      "count": "",
+      "enabled_cluster_log_types": null,
+      "enable_key_rotation": null,
+      "encryption_config": null,
+      "filename": "lambda_function.zip",
+      "function_name": "terraform_lambda_alexa_example",
+      "handler": "lambda_function.lambda_handler",
+      "instance_types": null,
+      "metadata": null,
+      "name": "",
+      "node_group_name": "",
+      "node_role_arn": null,
+      "policy": null,
+      "policy_arn": null,
+      "principal": "",
+      "provider": {
+        "type": "",
+        "labels": null,
+        "mode": "",
+        "pos": {
+          "filename": "",
+          "line": 0
+        },
+        "name": ""
+      },
+      "remote_access": null,
+      "role": "aws_iam_role.default.arn",
+      "role_arn": null,
+      "role_ref": null,
+      "rule": null,
+      "runtime": "python2.7",
+      "scaling_config": null,
+      "source_code_hash": {
+        "filebase64sha256": [
+          ""
+        ]
+      },
+      "statement_id": "",
+      "subject": null,
+      "subnet_ids": null,
+      "tags": null,
+      "target_key_id": null,
+      "version": null,
+      "vpc_config": null
+    },
+    {
+      "type": "aws_iam_role",
+      "labels": [
+        "default"
+      ],
+      "mode": "",
+      "pos": {
+        "filename": "./main.tf",
+        "line": 27
+      },
+      "action": "",
+      "assume_role_policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"Service\": \"lambda.amazonaws.com\"\n      },\n      \"Effect\": \"Allow\",\n      \"Sid\": \"\"\n    }\n  ]\n}\n",
+      "depends_on": null,
+      "description": "",
+      "disk_size": null,
+      "cluster_name": "",
+      "count": "",
+      "enabled_cluster_log_types": null,
+      "enable_key_rotation": null,
+      "encryption_config": null,
+      "filename": "",
+      "function_name": "",
+      "handler": "",
+      "instance_types": null,
+      "metadata": null,
+      "name": "terraform_lambda_alexa_example",
+      "node_group_name": "",
+      "node_role_arn": null,
+      "policy": null,
+      "policy_arn": null,
+      "principal": "",
+      "provider": {
+        "type": "",
+        "labels": null,
+        "mode": "",
+        "pos": {
+          "filename": "",
+          "line": 0
+        },
+        "name": ""
+      },
+      "remote_access": null,
+      "role": null,
+      "role_arn": null,
+      "role_ref": null,
+      "rule": null,
+      "runtime": "",
+      "scaling_config": null,
+      "source_code_hash": null,
+      "statement_id": "",
+      "subject": null,
+      "subnet_ids": null,
+      "tags": null,
+      "target_key_id": null,
+      "version": null,
+      "vpc_config": null
+    },
+    {
+      "type": "aws_iam_role_policy",
+      "labels": [
+        "default"
+      ],
+      "mode": "",
+      "pos": {
+        "filename": "./main.tf",
+        "line": 52
+      },
+      "action": "",
+      "assume_role_policy": null,
+      "depends_on": null,
+      "description": "",
+      "disk_size": null,
+      "cluster_name": "",
+      "count": "",
+      "enabled_cluster_log_types": null,
+      "enable_key_rotation": null,
+      "encryption_config": null,
+      "filename": "",
+      "function_name": "",
+      "handler": "",
+      "instance_types": null,
+      "metadata": null,
+      "name": "terraform_lambda_alexa_example",
+      "node_group_name": "",
+      "node_role_arn": null,
+      "policy": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\"\n            ],\n            \"Resource\": \"*\"\n        }\n    ]\n}\n",
+      "policy_arn": null,
+      "principal": "",
+      "provider": {
+        "type": "",
+        "labels": null,
+        "mode": "",
+        "pos": {
+          "filename": "",
+          "line": 0
+        },
+        "name": ""
+      },
+      "remote_access": null,
+      "role": "aws_iam_role.default.id",
+      "role_arn": null,
+      "role_ref": null,
+      "rule": null,
+      "runtime": "",
+      "scaling_config": null,
+      "source_code_hash": null,
+      "statement_id": "",
+      "subject": null,
+      "subnet_ids": null,
+      "tags": null,
+      "target_key_id": null,
+      "version": null,
+      "vpc_config": null
+    }
+  ],
+  "module_calls": [],
+  "outputs": [
+    {
+      "type": "aws_lambda_function_arn",
+      "labels": [],
+      "mode": "",
+      "pos": {
+        "filename": "./outputs.tf",
+        "line": 1
+      },
+      "name": "",
+      "value": "aws_lambda_function.default.arn"
+    }
+  ],
+  "path": ".",
+  "required_providers": [
+    {
+      "type": "aws",
+      "labels": [],
+      "mode": "",
+      "pos": {
+        "filename": "./main.tf",
+        "line": 6
+      },
+      "cluster_ca_certificate": null,
+      "host": null,
+      "load_config_file": null,
+      "region": "var.aws_region",
+      "token": ""
+    }
+  ],
+  "required_version": "\u003e= 0.12",
+  "variables": [
+    {
+      "type": "aws_region",
+      "labels": [],
+      "mode": "",
+      "pos": {
+        "filename": "./variables.tf",
+        "line": 1
+      },
+      "name": "aws_region",
+      "description": "The AWS region to create things in.",
+      "default": "us-east-1",
+      "required": false
+    }
+  ]
+}
