@@ -81,6 +81,7 @@ resource "random_integer" "bucket_suffix" {
 }
 
 resource "aws_s3_bucket" "foo" {
+  # oak9: S3 bucket is using a canned access control Policy instead of a Public Access Block Configuration
   bucket        = "terraform-sagemaker-example-${random_integer.bucket_suffix.result}"
   acl           = "private"
   force_destroy = true
