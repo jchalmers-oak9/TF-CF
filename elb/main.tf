@@ -122,6 +122,7 @@ resource "aws_elb" "web" {
   listener {
     instance_port     = 80
     instance_protocol = "http"
+    # oak9: aws_elb.listener.instance_protocol is not configured
     lb_port           = 80
     lb_protocol       = "http"
   # oak9: aws_elb.listener.lb_protocol is not configured
