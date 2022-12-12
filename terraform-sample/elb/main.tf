@@ -3,6 +3,7 @@ provider "aws" {
 }
 
 resource "aws_elb" "bar" {
+  # oak9: aws_elb.security_groups is not configured
   # oak9: aws_elb.listener.lb_protocol is not configured
   # oak9: aws_elb.listener.instance_protocol is not configured
   name               = "foobar-terraform-elb"
