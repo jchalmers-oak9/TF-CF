@@ -115,6 +115,7 @@ resource "azurerm_lb_nat_rule" "nat_rule_32" {
 }
 
 resource "azurerm_storage_account" "example" {
+  # oak9: azurerm_storage_account.identity.type is not configured
   name                     = "examplestoracc"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
