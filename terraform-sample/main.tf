@@ -203,6 +203,7 @@ resource "azurerm_lb_outbound_rule" "examob_rule_0ple" {
   loadbalancer_id         = azurerm_lb.sac_example.id
   name                    = "OutboundRule"
   protocol                = "All"
+  # oak9: azurerm_lb_probe.protocol does not ensure encryption of data-in-transit
   backend_address_pool_id = azurerm_lb_backend_address_pool.backend_address_pool_0.id
 
   frontend_ip_configuration {
