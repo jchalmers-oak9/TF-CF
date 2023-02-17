@@ -124,6 +124,7 @@ resource "azurerm_storage_account" "example" {
 }
 
 resource "azurerm_key_vault" "example" {
+  # oak9: azurerm_key_vault.network_acls.bypass is not configured
   name                        = "examplekeyvault"
   location                    = azurerm_resource_group.example.location
   resource_group_name         = azurerm_resource_group.example.name
